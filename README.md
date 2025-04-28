@@ -17,7 +17,6 @@ Copyright FirePlume, All Rights Reserved. Email: fireplume@126.com
 	- [FPFeatures](#fpfeatures)：包含简单的游戏功能模块
 		- [FPInteraction](#fpfeatures-fpinteraction)：交互
 		- [FPInventory](#fpfeatures-fpinventory)：库存
-	- [FPAssets](#fpassets)：用于存储资产
 	- [FPEditorTools](#fpeditortools)：编辑器工具
 		
 <a name="fpfeatures"></a>
@@ -100,13 +99,6 @@ void LocalDropItemToWorld(int32 InIndex, int32 InQuantity = -1, UFPInventoryComp
 UFUNCTION(BlueprintCallable, Category = "Inventory")
 void LocalSortItems(UFPInventoryComponent* InTargetInventoryComp = nullptr);
 ```
-
-<a name="fpassets"></a>
-## FPAssets
-
-用于存储资产
-
-* 字体：[Source Han Sans](https://www.github.com/adobe-fonts/source-han-sans)
 
 <a name="fpeditortools"></a>
 ## FPEditorTools
