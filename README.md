@@ -77,26 +77,26 @@ Copyright FirePlume, All Rights Reserved. Email: fireplume@126.com
 // @param InSourceIndex 源库存物品索引
 // @param InTargetIndex 此库存物品索引，InTargetIndex=-1时，自动分配位置
 // @param InTargetInventoryComp 要操作的库存组件，输入nullptr时，默认为玩家背包
-UFUNCTION(BlueprintCallable, Category = "Inventory")
+UFUNCTION(BlueprintCallable, Category = "FPInventory")
 void LocalTransferSlots(UFPInventoryComponent* InSourceInventoryComp, int32 InSourceIndex, int32 InTargetIndex = -1, UFPInventoryComponent* InTargetInventoryComp = nullptr);
 
 // 拆分物品，在本地调用
 // @param InIndex 物品位置索引
 // @param InQuantity 拆分数量
 // @param InTargetInventoryComp 要操作的库存组件，输入nullptr时，默认为玩家背包
-UFUNCTION(BlueprintCallable, Category = "Inventory")
+UFUNCTION(BlueprintCallable, Category = "FPInventory")
 void LocalSplitStack(int32 InIndex, int32 InQuantity, UFPInventoryComponent* InTargetInventoryComp = nullptr);
 
 // 丢弃物品到世界，在本地调用
 // @param InIndex 物品位置索引
 // @param InQuantity 输入-1时，全部丢弃
 // @param InTargetInventoryComp 要操作的库存组件，输入nullptr时，默认为玩家背包
-UFUNCTION(BlueprintCallable, Category = "Inventory")
+UFUNCTION(BlueprintCallable, Category = "FPInventory")
 void LocalDropItemToWorld(int32 InIndex, int32 InQuantity = -1, UFPInventoryComponent* InTargetInventoryComp = nullptr);
 
 // 整理物品
 // @param InTargetInventoryComp 要操作的库存组件，输入nullptr时，默认为玩家背包
-UFUNCTION(BlueprintCallable, Category = "Inventory")
+UFUNCTION(BlueprintCallable, Category = "FPInventory")
 void LocalSortItems(UFPInventoryComponent* InTargetInventoryComp = nullptr);
 ```
 
