@@ -71,12 +71,16 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (DisplayPriority = 1), Category = "Inventory")
 	TSoftClassPtr<AActor> Class = nullptr;
 
+	// 图标，可以是Texture2D或MaterialInterface；可以通过函数UFPFeaturesFunctionLibrary::SetItemImage()设置到Image控件上
+	UPROPERTY(EditAnywhere, meta = (AllowedClasses = "/Script/Engine.Texture2D,/Script/Engine.MaterialInterface", DisplayPriority = 2), Category = "Inventory")
+	FSoftObjectPath Icon = nullptr;
+
 	// 物品重量
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (DisplayPriority = 2), Category = "Inventory")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (ClampMin = 0, DisplayPriority = 3), Category = "Inventory")
 	float Weight = 0.0f;
 
 	// 物品堆叠数量
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (DisplayPriority = 3), Category = "Inventory")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (ClampMin = 1, DisplayPriority = 4), Category = "Inventory")
 	int32 StackSize = 1;
 };
 ```
@@ -348,6 +352,12 @@ static FFPInventorySlot MakeInventorySlot(int32 InIndex);
 // 创建分配插槽名称
 UFUNCTION(BlueprintPure, Category = "Inventory")
 static FFPInventorySlot MakeAssignedSlot(FName InSlotName);
+
+// 设置物品图像
+// @param InImageWidget 图片控件
+// @param InIcon 图标，可以是Texture2D或MaterialInterface
+UFUNCTION(BlueprintCallable, Category = "Inventory")
+static void SetItemImage(UImage* InImageWidget, const FSoftObjectPath& InIcon);
 ```
 
 <a name="fpeditortools"></a>
